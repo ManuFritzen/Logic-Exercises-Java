@@ -78,7 +78,9 @@ public class ListaTrabalhoEx04 {
             if(!jogar) {
                 System.out.println("TCHAAAAUUU!!");
             }else if(letraDigitada == 'A' || letraDigitada == 'W' || letraDigitada == 'D' || letraDigitada == 'S' ) {
+
                 contadorMovimento++;
+                
                 for ( int i = 0 ; i < 8 ; i++){
                     for ( int j = 0 ; j < 8 ; j++){
                         matriz[i][j] = zero;
