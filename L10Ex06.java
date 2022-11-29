@@ -34,47 +34,40 @@ public class L10Ex06 {
        int simples = 0;
        int duplas = 0;
        int triplas = 0;
+       
 
-       for(int i = 0 ; i < 13 ; i++){            
-            if(gabaritoLoteria[i] == 1){
-                if(apostas[i][0]==1){
-                    pontos++;             
-                    simples++;
-                }
-                if(apostas[i][0] ==1  && apostas[i][1] == 1|| apostas[i][0] ==1 && apostas[i][2] ==1){
-                    duplas++;
-                }
-                if(apostas[i][0]==1 && apostas[i][1] ==1 && apostas[i][2] ==1){
-                    triplas++;
-                }
-             }
-            if(gabaritoLoteria[i] == 2){
-                 if(apostas[i][1]==1){
-                    pontos++;                
-                    simples++;
-                }
-                if(apostas[i][0] ==1  && apostas[i][1] == 1|| apostas[i][1] ==1 && apostas[i][2] ==1){
-                    duplas++;
-                }
-                if(apostas[i][0]==1 && apostas[i][1] ==1 && apostas[i][2] ==1){
-                    triplas++;
-                }
-            }
-            if(gabaritoLoteria[i] == 3){
-                if(apostas[i][2]==1){
-                     pontos++;
+       for(int i = 0 ; i < 13 ; i++){ 
+             if(apostas[i][0] ==1  && apostas[i][1] ==0 && apostas[i][2] ==0
+                || apostas[i][0] ==0 && apostas[i][2] ==1 && apostas[i][1] ==0
+                || apostas[i][0] ==0 && apostas[i][2] ==0 && apostas[i][1] ==1){
                      simples++;
-                }                
-                if(apostas[i][2] ==1  && apostas[i][1] == 1|| apostas[i][0] ==1 && apostas[i][2] ==1){
+                } else if(apostas[i][0] ==1  && apostas[i][1] ==1 && apostas[i][2] ==0|| apostas[i][0] ==1 && apostas[i][2] ==1 && apostas[i][1] ==0){
                     duplas++;
-                }
-                if(apostas[i][0]==1 && apostas[i][1] ==1 && apostas[i][2] ==1){
+                } else if(apostas[i][0]==1 && apostas[i][1] ==1 && apostas[i][2] ==1){
                     triplas++;
                 }
-            }            
+                       
+           switch(gabaritoLoteria[i]){
+                
+            case 1: 
+                if(apostas[i][0]==1){
+                    pontos++;
+                    break;
+                }                  
+            
+            case 2:
+                if(apostas[i][1]==1){
+                    pontos++;  
+                    break;                              
+                }
+
+            case 3:
+                if(apostas[i][2]==1){
+                    pontos++;  
+                    break;                              
+                }
+           } 
        }
-
-
 
        //MOATRANDO TUDO NA TELA
 
@@ -92,9 +85,7 @@ public class L10Ex06 {
         System.out.println();
         }
 
-        System.out.println(pontos + " (pontos)" + "\n" +simples + " (simples)" + "\n" + duplas + " (duplas)" + "\n" + triplas + " (triplas)" );
-
-        
+        System.out.println(pontos + " (pontos)" + "\n" +simples + " (simples)" + "\n" + duplas + " (duplas)" + "\n" + triplas + " (triplas)" );        
         
     }
 }
